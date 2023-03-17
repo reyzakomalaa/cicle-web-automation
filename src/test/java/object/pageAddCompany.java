@@ -33,10 +33,21 @@ public class pageAddCompany {
         return btnCreateNewCompany;
     }
 
-    By fieldCompanyName = By.xpath("//input");
+    By fieldCompanyName = By.xpath("//input[@name = 'name']");
 
     public By getFieldCompanyName() {
         return fieldCompanyName;
     }
 
+    By btnCompanyIcon = By.xpath("//*[@id = 'root']/div[1]/div[2]/div[2]/div/div[2]");
+
+    public By getBtnCompanyIcon() {
+        return btnCompanyIcon;
+    }
+
+    By btnAddCompanyIcon = By.xpath("//*[@id = 'root']/div[1]/div[2]/div[2]/div[2]/div/div/div/div[1]/div/div[2]");
+
+    public By getBtnAddCompanyIcon() {
+        return btnAddCompanyIcon;
+    }
 }

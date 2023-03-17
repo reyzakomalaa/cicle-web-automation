@@ -70,4 +70,67 @@ public class home extends env {
         wait.until(ExpectedConditions.elementToBeClickable(elementHome.getBtnLogout()));
         driver.findElement(elementHome.getBtnLogout()).click();
     }
+
+    @And("user click Create in Home page")
+    public void userClickCreateInHomePage() {
+        wait = new WebDriverWait(driver,10);
+
+        wait.until(ExpectedConditions.elementToBeClickable(elementHome.getBtnCreateNewCompany()));
+        driver.findElement(elementHome.getBtnCreateNewCompany()).click();
+    }
+
+    @When("user click Add New Member icon on Home page")
+    public void userClickAddNewMemberIconOnHomePage() {
+        wait = new WebDriverWait(driver,10);
+
+        wait.until(ExpectedConditions.elementToBeClickable(elementHome.getBtnAddMember()));
+        driver.findElement(elementHome.getBtnAddMember()).click();
+    }
+
+    @And("user click Invite button")
+    public void userClickInviteButton() {
+        wait = new WebDriverWait(driver,10);
+
+        wait.until(ExpectedConditions.elementToBeClickable(elementHome.getBtnInviteMember()));
+        driver.findElement(elementHome.getBtnInviteMember()).click();
+    }
+
+    @And("user fill Member Email")
+    public void userFillMemberEmail() {
+        wait = new WebDriverWait(driver,10);
+
+        wait.until(ExpectedConditions.elementToBeClickable(elementHome.getFieldEmail()));
+        driver.findElement(elementHome.getFieldEmail()).sendKeys("dummy1.reyza@gmail.com");
+    }
+
+    @And("user click Send")
+    public void userClickSend() {
+        wait = new WebDriverWait(driver,10);
+
+        wait.until(ExpectedConditions.elementToBeClickable(elementHome.getBtnInviteSubmit()));
+        driver.findElement(elementHome.getBtnInviteSubmit()).click();
+
+    }
+
+    @Then("show toaster success invitation has been sent")
+    public void showToasterSuccessInvitationHasBeenSent() {
+        wait = new WebDriverWait(driver,10);
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(element.getToastSuccess()));
+        driver.findElement(element.getToastSuccess()).isDisplayed();
+    }
+
+    @Then("user will see HQ section Empty State")
+    public void userWillSeeHQSectionEmptyState() {
+        
+    }
+
+    @Then("user will see Team section Empty State")
+    public void userWillSeeTeamSectionEmptyState() {
+        
+    }
+
+    @Then("user will see Project section Empty State")
+    public void userWillSeeProjectSectionEmptyState() {
+    }
 }

@@ -55,25 +55,46 @@ Feature: Home
   Scenario: Ensure user can invite new Member
     Given user is in Company Home page
     When user click Add New Member icon on Home page
+    And user click Invite button
     And user fill Member Email
     And user click Send
     Then show toaster success invitation has been sent
 
+  @EmptyState
   Scenario: Ensure user can see HQ section with Empty State
     Given user is in Company Home page
-    When user click Create New Company
-    And user fill Name
+    When user click Company icon in Home page
+    And user click Add Company icon in Home page
+    And user fill Company Name
     And user fill Description
-    And user click Create
+    And user click Create in Home page
+    Then show toaster success create new Company
+    Then user is in Company Home page
     Then user will see HQ section Empty State
 
+  @EmptyState
   Scenario: Ensure user can see Team section with Empty State
     Given user is in Company Home page
-    When user click Create New Company
-    And user fill Name
+    When user click Company icon in Home page
+    And user click Add Company icon in Home page
+    And user fill Company Name
     And user fill Description
-    And user click Create
+    And user click Create in Home page
+    Then show toaster success create new Company
+    Then user is in Company Home page
     Then user will see Team section Empty State
+
+  @EmptyState
+  Scenario: Ensure user can see Project section with Empty State
+    Given user is in Company Home page
+    When user click Company icon in Home page
+    And user click Add Company icon in Home page
+    And user fill Company Name
+    And user fill Description
+    And user click Create in Home page
+    Then show toaster success create new Company
+    Then user is in Company Home page
+    Then user will see Project section Empty State
 
   @Logout
   Scenario: Ensure user can Logout
@@ -81,4 +102,15 @@ Feature: Home
     When user click Avatar of Me
     And user click Logout icon
     Then user is in Login page
+
+  @AddCompanyHome
+  Scenario: Ensure user can create new company for the second time or more
+    Given user is in Company Home page
+    When user click Company icon in Home page
+    And user click Add Company icon in Home page
+    And user fill Company Name
+    And user fill Description
+    And user click Create in Home page
+    Then show toaster success create new Company
+    Then user is in Company Home page
 

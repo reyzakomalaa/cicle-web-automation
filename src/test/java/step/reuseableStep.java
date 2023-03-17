@@ -1,6 +1,7 @@
 package step;
 
 import config.env;
+import io.cucumber.java.en.When;
 import object.reuseableObject;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -27,6 +28,14 @@ public class reuseableStep extends env {
 
         wait.until(ExpectedConditions.elementToBeClickable(element.getFieldDescription()));
         driver.findElement(element.getFieldDescription()).sendKeys(fakerDescription());
+    }
+
+    @When("user click Create")
+    public void user_click_create() {
+        wait = new WebDriverWait(driver,10);
+
+        wait.until(ExpectedConditions.elementToBeClickable(element.getBtnCreate()));
+        driver.findElement(element.getBtnCreate()).click();
     }
 
     @Then("show toaster success create new Company")

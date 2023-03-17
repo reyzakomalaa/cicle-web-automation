@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/feature",
         glue = "step",
 //        plugin = "html:target/Test_report.html",
-        tags = "@Logout"
+        tags = "@EmptyState"
 )
 public class runAll {
 }

@@ -48,10 +48,6 @@ public class addCompany extends env {
             e.printStackTrace();
         }
     }
-    @When("user click Create")
-    public void user_click_create() {
-        driver.findElement(element.getBtnCreate()).click();
-    }
 
     @Then("show error toaster must be filled name and description")
     public void showErrorToasterMustBeFilledNameAndDescription() {
@@ -98,5 +94,21 @@ public class addCompany extends env {
 
         wait.until(ExpectedConditions.elementToBeClickable(elementAddCompany.getBtnLoginGmail()));
         driver.findElement(elementAddCompany.getBtnLoginGmail()).isDisplayed();
+    }
+
+    @When("user click Company icon in Home page")
+    public void userClickCompanyIconInHomePage() {
+        wait = new WebDriverWait(driver,10);
+
+        wait.until(ExpectedConditions.elementToBeClickable(elementAddCompany.getBtnCompanyIcon()));
+        driver.findElement(elementAddCompany.getBtnCompanyIcon()).click();
+    }
+
+    @And("user click Add Company icon in Home page")
+    public void userClickAddCompanyIconInHomePage() {
+        wait = new WebDriverWait(driver,10);
+
+        wait.until(ExpectedConditions.elementToBeClickable(elementAddCompany.getBtnAddCompanyIcon()));
+        driver.findElement(elementAddCompany.getBtnAddCompanyIcon()).click();
     }
 }
