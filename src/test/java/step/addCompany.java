@@ -31,6 +31,9 @@ public class addCompany extends env {
 
     @When("user click Create a new Company")
     public void user_click_create_a_new_company() {
+        wait = new WebDriverWait(driver,10);
+
+        wait.until(ExpectedConditions.elementToBeClickable(elementAddCompany.getBtnCreateNewCompany()));
         driver.findElement(elementAddCompany.getBtnCreateNewCompany()).click();
     }
     @When("user fill Company Name")

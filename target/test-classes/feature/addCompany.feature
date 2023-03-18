@@ -2,7 +2,9 @@ Feature: Add Company
 
   @AddCompany
   Scenario: Ensure user can create new company for the first time
-    Given user in Welcome page
+    Given user is in Login page
+    When user click Login with Google Account
+    And user select account
     When user click Create a new Company
     And user fill Company Name
     And user fill Description
